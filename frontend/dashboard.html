@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard - DonationDrive</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DonationDrive</div>
+            <ul>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="make-donation.html">Make Donation</a></li>
+                <li><a href="donations-list.html">My Donations</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <h1>Welcome, <span id="userName"></span></h1>
+            <p>Make a difference with your donations</p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3>Total Donations</h3>
+                <p id="totalDonations">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingDonations">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedDonations">0</p>
+            </div>
+        </div>
+
+        <div class="recent-donations">
+            <h2>Recent Donations</h2>
+            <div class="donations-list" id="recentDonations">
+                <!-- Dynamically populated -->
+                <p class="empty-message">You haven't made any donations yet. <a href="make-donation.html">Start your first donation</a></p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/donations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load user data
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                document.getElementById('userName').textContent = user.name;
+            } else {
+                window.location.href = 'login.html';
+            }
+
+            // Load donation stats
+            loadDonationStats();
+            loadRecentDonations();
+        });
+    </script>
+</body>
+</html>

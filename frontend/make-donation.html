@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Make Donation - DonationDrive</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DonationDrive</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="make-donation.html" class="active">Make Donation</a></li>
+                <li><a href="donations-list.html">My Donations</a></li>
+                <li><a href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="donation-form-container">
+        <div class="donation-form">
+            <h2>Make a Donation</h2>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="itemName">Item Name</label>
+                    <input type="text" id="itemName" name="itemName" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="itemType">Item Type</label>
+                    <select id="itemType" name="itemType" required>
+                        <option value="">Select item type</option>
+                        <option value="clothing">Clothing</option>
+                        <option value="food">Food</option>
+                        <option value="toys">Toys</option>
+                        <option value="books">Books</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickupAddress">Pickup Address</label>
+                    <textarea id="pickupAddress" name="pickupAddress" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Pickup Date</label>
+                    <input type="date" id="preferredDate" name="preferredDate" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="preferredTime">Preferred Pickup Time</label>
+                    <input type="time" id="preferredTime" name="preferredTime" required />
+                </div>
+
+                <button type="submit" class="btn">Submit Donation</button>
+            </form>
+        </div>
+    </main>
+    <script src="js/auth.js"></script>
+    <script src="js/donations.js"></script>
+</body>
+</html>
+
