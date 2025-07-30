@@ -403,10 +403,11 @@ function createDonationItem(donation, isNGOView = false) {
     const pickupAddress = document.createElement('p');
     pickupAddress.textContent = donation.pickupAddress;
     donationInfo.appendChild(pickupAddress);
+    pickupAddress.textContent=`Pickup Address: ${donation.pickupAddress}`;
 
     const pickupDateTime = document.createElement('p');
 const formattedDate = new Date(donation.pickupDateTime).toLocaleString();
-pickupDateTime.textContent = `${formattedDate}`;
+pickupDateTime.textContent = ` Date and Time: ${formattedDate}`;
 donationInfo.appendChild(pickupDateTime);
 
 
