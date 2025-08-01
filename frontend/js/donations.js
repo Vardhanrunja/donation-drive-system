@@ -2,7 +2,7 @@
 async function loadDonationStats() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://donation-drive-system.onrender.com//api/donations/stats', {
+        const response = await fetch('https://donation-drive-system.onrender.com/api/donations/stats', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -22,7 +22,7 @@ async function loadDonationStats() {
 async function loadNGORecentDonations() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://donation-drive-system.onrender.com//api/donations/ngo', {
+        const response = await fetch('https://donation-drive-system.onrender.com/api/donations/ngo', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -50,7 +50,7 @@ async function loadNGORecentDonations() {
 async function loadRecentDonations() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://donation-drive-system.onrender.com//api/donations/recent', {
+        const response = await fetch('https://donation-drive-system.onrender.com/api/donations/recent', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -79,7 +79,7 @@ async function loadRecentDonations() {
 async function loadNGODonationStats() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://donation-drive-system.onrender.com//api/donations/ngo-stats', {
+        const response = await fetch('https://donation-drive-system.onrender.com/api/donations/ngo-stats', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -196,9 +196,9 @@ async function loadDonations() {
         
         if (user.userType === 'ngo') {
             // Fetch assigned donations (donations assigned to this NGO)
-            const assignedUrl = 'https://donation-drive-system.onrender.com//api/donations/ngo';
+            const assignedUrl = 'https://donation-drive-system.onrender.com/api/donations/ngo';
             // Fetch available donations (donations available for NGO)
-            const availableUrl = 'https://donation-drive-system.onrender.com//api/donations/available';
+            const availableUrl = 'https://donation-drive-system.onrender.com/api/donations/available';
 
             // Build query params for filters, e.g. "?status=pending&type=food"
             // const params = new URLSearchParams();
@@ -253,7 +253,7 @@ async function loadDonations() {
 
         } else {
             // For donors, load from donor route as before:
-            let url = 'https://donation-drive-system.onrender.com//api/donations/donor';
+            let url = 'https://donation-drive-system.onrender.com/api/donations/donor';
             // const params = new URLSearchParams();
             // if (statusFilter !== 'all') params.append('status', statusFilter);
             // if (typeFilter !== 'all') params.append('type', typeFilter);
