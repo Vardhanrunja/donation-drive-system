@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = Object.fromEntries(formData.entries());
             
             try {
-                const response = await fetch('https://donation-drive-system.onrender.com//api/auth/login', {
+                const response = await fetch('https://donation-drive-system.onrender.com/api/auth/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
